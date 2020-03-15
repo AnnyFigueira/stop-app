@@ -15,15 +15,24 @@ const SecondaryText = styled(Text)`
   color: ${props => props.theme.colors.secondary};
 `;
 
+const ButtonsContainer = styled.View`
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 60vh;
+  margin: auto;
+`
+
 const ButtonContainer = styled.TouchableOpacity`
-  min-width: 100px;
+  min-width: 70vw;
   padding: 16px;
-  border-radius: 16px;
+  border-radius: 4px;
   background-color: ${props => props.theme.colors.primary};
+  /* margin-bottom: 2vh; */
 `;
 
 const ButtonText = styled.Text`
-  font-size: 15px;
+  font-size: 15pt;
   color: ${props => props.theme.colors.background};
   text-align: center;
 `;
@@ -33,13 +42,21 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <StyledView style={styles.container}>
-        <PrimaryText>Open up App.js to start working on your app!</PrimaryText>
+        {/* <PrimaryText>Open up App.js to start working on your app!</PrimaryText>
         <SecondaryText>
           Open up App.js to start working on your app!
-        </SecondaryText>
-        <ButtonContainer>
-          <ButtonText>Press me</ButtonText>
-        </ButtonContainer>
+        </SecondaryText> */}
+        <ButtonsContainer>
+          <ButtonContainer>
+            <ButtonText>Player VS IA</ButtonText>
+          </ButtonContainer>
+          <ButtonContainer>
+            <ButtonText>Player VS Player</ButtonText>
+          </ButtonContainer>
+          <ButtonContainer>
+            <ButtonText>Player VS Player (Live)</ButtonText>
+          </ButtonContainer>
+        </ButtonsContainer>
       </StyledView>
     </ThemeProvider>
   );
@@ -47,8 +64,7 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
+    display: "flex",
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center"
-  }
+  },
 });
