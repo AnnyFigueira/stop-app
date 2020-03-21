@@ -1,18 +1,11 @@
 import React, { useState } from "react";
-import { StyleSheet, Text, View, Button } from "react-native";
+import { StyleSheet, Text, View } from "react-native";
 import styled, { ThemeProvider } from "styled-components/native";
 import { ocean } from "./src/themes";
+import Button from "./src/components/Button";
 
 const StyledView = styled(View)`
   background-color: ${props => props.theme.colors.background};
-`;
-
-const PrimaryText = styled(Text)`
-  color: ${props => props.theme.colors.primary};
-`;
-
-const SecondaryText = styled(Text)`
-  color: ${props => props.theme.colors.secondary};
 `;
 
 const ButtonsContainer = styled.View`
@@ -21,20 +14,6 @@ const ButtonsContainer = styled.View`
   justify-content: space-between;
   height: 60vh;
   margin: auto;
-`
-
-const ButtonContainer = styled.TouchableOpacity`
-  min-width: 70vw;
-  padding: 16px;
-  border-radius: 4px;
-  background-color: ${props => props.theme.colors.primary};
-  /* margin-bottom: 2vh; */
-`;
-
-const ButtonText = styled.Text`
-  font-size: 15pt;
-  color: ${props => props.theme.colors.background};
-  text-align: center;
 `;
 
 export default function App() {
@@ -47,15 +26,9 @@ export default function App() {
           Open up App.js to start working on your app!
         </SecondaryText> */}
         <ButtonsContainer>
-          <ButtonContainer>
-            <ButtonText>Player VS IA</ButtonText>
-          </ButtonContainer>
-          <ButtonContainer>
-            <ButtonText>Player VS Player</ButtonText>
-          </ButtonContainer>
-          <ButtonContainer>
-            <ButtonText>Player VS Player (Live)</ButtonText>
-          </ButtonContainer>
+          <Button>Player VS IA</Button>
+          <Button>Player VS Player</Button>
+          <Button>Player VS Player (Live)</Button>
         </ButtonsContainer>
       </StyledView>
     </ThemeProvider>
@@ -65,6 +38,6 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     display: "flex",
-    flex: 1,
-  },
+    flex: 1
+  }
 });
